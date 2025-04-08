@@ -1,10 +1,10 @@
-package nz.ac.canterbury.seng302.homehelper;
+package BLIP404;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HomeHelperApplicationTests {
+class BLIP404ApplicationTests {
 
 	@Test
 	void contextLoads() {
