@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" context="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404: BLIP Upcoming</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="~{fragments/navbar.html :: navbar}"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-auto card mx-3 mt-3" th:each="upcoming : ${upcoming}">
+            <h4 class="ms-2 mt-2" th:text="${upcoming.title}">Title</h4>
+            <p class="text-muted small ms-2" th:text="${upcoming.date}">Date</p>
+            <img th:src="${upcoming.poster}" alt="Image" width="350" height="500">
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer.html :: footer}"></div>
+</body>
+</html>
