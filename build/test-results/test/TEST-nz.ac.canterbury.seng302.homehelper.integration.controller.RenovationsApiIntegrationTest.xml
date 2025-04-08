@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsApiIntegrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-03-04T20:49:25" hostname="Mac" time="0.151">
+  <properties/>
+  <testcase name="deleteRecord_recordIdDoesExist_redirectedToListAndRecordDelete()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsApiIntegrationTest" time="0.145"/>
+  <testcase name="deleteRecord_recordIdDoesNotExist_FailsSilently()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsApiIntegrationTest" time="0.006"/>
+  <system-out><![CDATA[2025-03-05T09:49:25.958+13:00  INFO 29119 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsApiIntegrationTest]: RenovationsApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05T09:49:25.959+13:00  INFO 29119 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration nz.ac.canterbury.seng302.homehelper.HomeHelperApplication for test class nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsApiIntegrationTest
+2025-03-05T09:49:25.969+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.970+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.970+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.093+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : DELETE /renovations/1
+2025-03-05T09:49:26.112+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:26.112+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:26.112+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.113+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : DELETE /renovations/1000000
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

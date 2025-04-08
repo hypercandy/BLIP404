@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-03-04T20:49:26" hostname="Mac" time="0.035">
+  <properties/>
+  <testcase name="testRenovationFormController_DefaultValues()" classname="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" time="0.028"/>
+  <testcase name="testAddRooms_InputPersist()" classname="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" time="0.002"/>
+  <testcase name="testSubmitRenovationForm_Success()" classname="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" time="0.001"/>
+  <testcase name="testSubmitRenovationForm_Failure()" classname="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" time="0.001"/>
+  <testcase name="testAddRooms_Success()" classname="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" time="0.0"/>
+  <testcase name="testRenovationFormController_Parameters()" classname="nz.ac.canterbury.seng302.homehelper.unit.controller.RenovationFormControllerTest" time="0.001"/>
+  <system-out><![CDATA[2025-03-05T09:49:26.189+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/new
+2025-03-05T09:49:26.192+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/new
+2025-03-05T09:49:26.192+13:00  WARN 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : Invalid room name
+2025-03-05T09:49:26.193+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/new
+2025-03-05T09:49:26.194+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/new
+2025-03-05T09:49:26.195+13:00  WARN 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : Invalid entry
+2025-03-05T09:49:26.195+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/new
+2025-03-05T09:49:26.196+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/new
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

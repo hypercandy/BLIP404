@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-03-04T20:49:26" hostname="Mac" time="0.042">
+  <properties/>
+  <testcase name="getRecord_recordIdDoesNotExist_NotFoundPageReturned()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest" time="0.007"/>
+  <testcase name="getRecord_recordIdDoesExist_PageReturned()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest" time="0.011"/>
+  <testcase name="getRenovationEdit_recordDoesNotExist_NotFoundPageReturned()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest" time="0.005"/>
+  <testcase name="getRenovationEdit_recordDoesExist_PageReturned()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest" time="0.007"/>
+  <testcase name="getRecord_recordIdInvalidFormat_Failure()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest" time="0.008"/>
+  <system-out><![CDATA[2025-03-05T09:49:26.117+13:00  INFO 29119 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest]: RenovationsIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05T09:49:26.118+13:00  INFO 29119 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration nz.ac.canterbury.seng302.homehelper.HomeHelperApplication for test class nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationsIntegrationTest
+2025-03-05T09:49:26.121+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:26.121+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:26.121+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.123+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/new
+2025-03-05T09:49:26.130+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:26.130+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:26.130+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.135+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/new
+2025-03-05T09:49:26.141+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:26.141+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:26.141+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.142+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/edit/1000000
+2025-03-05T09:49:26.146+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:26.147+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:26.147+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.150+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/edit/3
+2025-03-05T09:49:26.157+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:26.157+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:26.157+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:26.158+13:00  WARN 29119 --- [    Test worker] o.s.web.servlet.PageNotFound             : No mapping for GET /renovations/invalid_string
+2025-03-05T09:49:26.160+13:00  WARN 29119 --- [    Test worker] o.s.web.servlet.PageNotFound             : No endpoint GET /renovations/invalid_string.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

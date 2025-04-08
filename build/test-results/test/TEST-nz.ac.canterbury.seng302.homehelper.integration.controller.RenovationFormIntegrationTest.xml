@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-03-04T20:49:25" hostname="Mac" time="0.109">
+  <properties/>
+  <testcase name="getListRecords_ValidRepository_Success()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.039"/>
+  <testcase name="getRenovationFormTest_Parameters()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.012"/>
+  <testcase name="testUpdateRenovationRecord_Success()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.013"/>
+  <testcase name="getRenovationFormTest_defaultValues()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.01"/>
+  <testcase name="testUpdateRenovationRecord_Failure()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.01"/>
+  <testcase name="submitRenovationFormTest_Success()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.007"/>
+  <testcase name="getListRecords_EmptyRepository_Success()" classname="nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest" time="0.012"/>
+  <system-out><![CDATA[2025-03-05T09:49:25.195+13:00  INFO 29119 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest]: RenovationFormIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05T09:49:25.200+13:00  INFO 29119 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration nz.ac.canterbury.seng302.homehelper.HomeHelperApplication for test class nz.ac.canterbury.seng302.homehelper.integration.controller.RenovationFormIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.2)
+
+2025-03-05T09:49:25.210+13:00  INFO 29119 --- [    Test worker] .c.s.h.i.c.RenovationFormIntegrationTest : Starting RenovationFormIntegrationTest using Java 21.0.2 with PID 29119 (started by amielemiguel in /Users/amielemiguel/Library/CloudStorage/OneDrive-UniversityofCanterbury/2025/seng302)
+2025-03-05T09:49:25.211+13:00  INFO 29119 --- [    Test worker] .c.s.h.i.c.RenovationFormIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2025-03-05T09:49:25.279+13:00  INFO 29119 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-05T09:49:25.283+13:00  INFO 29119 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interface.
+2025-03-05T09:49:25.330+13:00  INFO 29119 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-03-05T09:49:25.330+13:00  INFO 29119 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2025-03-05T09:49:25.330+13:00  INFO 29119 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-03-05T09:49:25.331+13:00  INFO 29119 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-05T09:49:25.332+13:00  INFO 29119 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-05T09:49:25.334+13:00  INFO 29119 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-05T09:49:25.336+13:00  WARN 29119 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-05T09:49:25.352+13:00  INFO 29119 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-05T09:49:25.356+13:00  INFO 29119 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-05T09:49:25.431+13:00  WARN 29119 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-05T09:49:25.843+13:00  INFO 29119 --- [    Test worker] .c.s.h.i.c.RenovationFormIntegrationTest : Started RenovationFormIntegrationTest in 0.642 seconds (process running for 4.039)
+2025-03-05T09:49:25.857+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.857+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.858+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:25.877+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations
+2025-03-05T09:49:25.890+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.890+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.890+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:25.897+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/new
+2025-03-05T09:49:25.903+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.904+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.904+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:25.908+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/edit/{recordId:[0-9]+}
+2025-03-05T09:49:25.916+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.917+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.917+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:25.919+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations/new
+2025-03-05T09:49:25.929+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.929+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.930+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-05T09:49:25.932+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/edit/{recordId:[0-9]+}
+2025-03-05T09:49:25.933+13:00  WARN 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : Renovation record name must only include letters, numbers, spaces, dots, hyphens or apostrophes
+2025-03-05T09:49:25.938+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.938+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.939+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:25.941+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : POST /renovations/new
+2025-03-05T09:49:25.948+13:00  INFO 29119 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-05T09:49:25.949+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T09:49:25.949+13:00  INFO 29119 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T09:49:25.952+13:00  INFO 29119 --- [    Test worker] n.a.c.s.h.c.RenovationFormController     : GET /renovations
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
