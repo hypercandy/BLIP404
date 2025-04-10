@@ -14,10 +14,12 @@
                 <img src="https://i.pinimg.com/736x/99/71/4c/99714c04b3955a76869aef1fa945b4c9.jpg" alt="OG Avengers" width="350" height="500">
             </div>
             <div class="col-sm">
-                <h1>Next Release:</h1>
-                <p><span th:text="${nextReleaseTitle}"></span></p>
-                <p><span th:text="${nextReleaseDate}"></span></p>
-                <p>Days until release: <span th:text="${untilRelease}"></span></p>
+                <div class="card">
+                    <h1 class="ms-3 mt-3">Next Release:</h1>
+                    <p class="ms-3"><span th:text="${nextReleaseTitle}"></span></p>
+                    <p class="ms-3"><span th:text="${nextReleaseDate}"></span></p>
+                    <p class="ms-3">Days until release: <span th:text="${untilRelease}"></span></p>
+                </div>
             </div>
         </div>
     </div>

@@ -1,10 +1,21 @@
-<nav th:fragment="navbar" class="navbar navbar-light" style="background-color: #604ac7;">
-  <div class="container-fluid">
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light" style="background-color: #604ac7;">
+  <div class="container-lg">
     <a class="navbar-brand" th:href="@{/}" style="color: white">404: BLIP</a>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/upcoming}" style="color: white">Upcoming</a>
-      </li>
-    </ul>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link me-2" th:href="@{/new}" style="color: white">New Announcement</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mb-auto me-2 me-lg-0 flex-row flex-wrap">
+        <li class="nav-item">
+            <a class="nav-link me-2" th:href="@{/upcoming}" style="color: white">Upcoming</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" th:href="@{/chronological}" style="color: white">Chronological</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" th:href="@{/release}" style="color: white">Release</a>
+          </li>
+      </ul>
   </div>
 </nav>

@@ -3,20 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" context="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404: BLIP Upcoming</title>
+    <title>404: BLIP Chronological</title>
     <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 </head>
 <body>
 <div th:replace="~{fragments/navbar.html :: navbar}"></div>
 <div class="container">
     <div class="row g-0">
-        <div class="col-md-auto card mx-3 mt-3" th:each="upcoming : ${upcoming}">
-            <div class="card-header text-wrap">
-                <h4 th:text="${upcoming.title}">Title</h4>
-            </div>
-            <div class="card-body">
-                <img th:src="${upcoming.poster}" alt="Image" width="350" height="500">
-                <p class="text-muted small ms-2 mt-2" th:text="'Release Date: ' + ${upcoming.releaseDate}">Date</p>
+        <div class="card mt-3 d-flex flex-row align-items-center" th:each="chronological : ${chronological}">
+            <img th:src="${chronological.poster}" alt="Image" width="350" height="500">
+            <div>
+                <h4 class="ms-3 text-wrap" th:text="${chronological.title}">Title</h4>
+                <p class="text-muted small ms-3" th:text="${chronological.releaseDate}">Release Date</p>
             </div>
         </div>
     </div>

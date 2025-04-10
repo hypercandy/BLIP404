@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-public class Upcoming {
+public class Marvel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -14,20 +14,20 @@ public class Upcoming {
     private String title;
 
     @Column(nullable = false)
-    private String platform;
+    private LocalDate releaseDate;
 
-    @Column(nullable = false)
-    private LocalDate date;
+    @Column
+    private LocalDate timelineDate;
 
     @Column(nullable = false)
     private String poster;
 
-    protected  Upcoming() {}
+    protected Marvel() {}
 
-    public Upcoming(String title, String platform, LocalDate date, String poster) {
+    public Marvel(String title, LocalDate releaseDate, LocalDate timelineDate, String poster) {
         this.title = title;
-        this.platform = platform;
-        this.date = date;
+        this.releaseDate = releaseDate;
+        this.timelineDate = timelineDate;
         this.poster = poster;
     }
 
@@ -35,8 +35,12 @@ public class Upcoming {
         return title;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public LocalDate getTimelineDate() {
+        return timelineDate;
     }
 
     public String getPoster() {
