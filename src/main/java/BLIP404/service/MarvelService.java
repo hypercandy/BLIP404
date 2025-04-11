@@ -33,4 +33,8 @@ public class MarvelService {
     public Iterable<Marvel> getRelease() {
         return marvelRepository.findReleaseOrder();
     }
+
+    public Marvel getMarvelById(Long id) {
+        return marvelRepository.findById(id).orElse(null);
+    }
 }

@@ -6,12 +6,15 @@ import BLIP404.service.MarvelService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is the BLIP404.controller for the home page.
@@ -77,8 +80,24 @@ public class MarvelController {
         model.addAttribute("releaseDate", releaseDate);
         model.addAttribute("timelineDate", timelineDate);
         model.addAttribute("poster", poster);
-        Marvel marvel = new Marvel(title, releaseDate, timelineDate, poster);
+        Marvel marvel = new Marvel(title, releaseDate, timelineDate, null, poster);
         marvelRepository.save(marvel);
         return "redirect:/upcoming";
+    }
+
+    @PostMapping("/watched/{id:[0-9]+}")
+    public String postWatchedMovie(@PathVariable Long id, @RequestParam("watched") LocalDate watchedDate, @RequestParam("page") String page) {
+        Marvel marvel = marvelService.getMarvelById(id);
+        if (marvel.getWatched() == null) {
+            List<LocalDate> dateWatched = new ArrayList<>();
+            dateWatched.add(watchedDate);
+            marvel.setWatched(dateWatched);
+            marvelRepository.save(marvel);
+            return String.format("redirect:/%s", page);
+        } else {
+            marvel.getWatched().add(watchedDate);
+            marvelRepository.save(marvel);
+            return String.format("redirect:/%s", page);
+        }
     }
 }
