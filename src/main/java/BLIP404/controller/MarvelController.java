@@ -79,6 +79,6 @@ public class MarvelController {
         model.addAttribute("poster", poster);
         Marvel marvel = new Marvel(title, releaseDate, timelineDate, poster);
         marvelRepository.save(marvel);
-        return "home";
+        return "redirect:/upcoming";
     }
 }
