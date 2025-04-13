@@ -100,6 +100,6 @@ public class MarvelController {
             marvel.getRating().add(watchRate);
         }
         marvelRepository.save(marvel);
-        return String.format("redirect:/%s", page);
+        return String.format("redirect:/%s?page=%s", page, page);
     }
 }

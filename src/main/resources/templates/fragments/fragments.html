@@ -1,7 +1,7 @@
 <body>
-<div class="container" th:fragment="marvel (page)" id="marvel">
+<div class="container" th:fragment="marvel (pages)" id="marvel">
     <div class="row g-0">
-        <div class="card mt-3 d-flex flex-row position-relative" th:each="page : ${page}">
+        <div class="card mt-3 d-flex flex-row position-relative" th:each="page : ${pages}">
             <img th:src="${page.poster}" alt="Image" width="350" height="500">
             <div class="d-flex flex-column justify-content-center position-relative flex-grow-1 ms-3 pe-5">
                 <h4 class="ms-3 text-wrap" th:text="${page.title}">Title</h4>
@@ -14,14 +14,14 @@
                 </div>
                 <div class="position-absolute d-flex flex-column align-items-start top-0 end-0 m-2">
                     <div class="d-flex align-items-center gap-1">
-                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#watched">+</button>
-                        <div class="modal fade" id="watched" tabindex="-1" aria-labelledby="watchedLabel" aria-hidden="true">
+                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="modal" th:attr="data-bs-target='#watched__' + ${page.id}">+</button>
+                        <div class="modal fade" th:id="'watched__' + ${page.id}" tabindex="-1" th:attr="aria-labelledby='watchedLabel__' + ${page.id}" aria-hidden="true">
                             <div class="modal-dialog">
                                 <form th:action="@{watched/{id}(id=${page.id})}" method="post">
-                                    <input type="hidden" name="page" th:value="${page}">
+                                    <input type="hidden" name="page" th:value="${param.page}">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="watchedLabel" th:text="${page.title}"></h5>
+                                            <h5 class="modal-title" th:id="'watchedLabel__' + ${page.id}" th:text="${page.title}"></h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
