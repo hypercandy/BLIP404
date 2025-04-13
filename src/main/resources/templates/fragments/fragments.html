@@ -1,0 +1,47 @@
+<body>
+<div class="container" th:fragment="marvel (page)" id="marvel">
+    <div class="row g-0">
+        <div class="card mt-3 d-flex flex-row position-relative" th:each="page : ${page}">
+            <img th:src="${page.poster}" alt="Image" width="350" height="500">
+            <div class="d-flex flex-column justify-content-center position-relative flex-grow-1 ms-3 pe-5">
+                <h4 class="ms-3 text-wrap" th:text="${page.title}">Title</h4>
+                <p class="text-muted small ms-3" th:text="${page.releaseDate}">Release Date</p>
+                <small class="text-muted d-block text-truncate ms-3" th:if="${not #lists.isEmpty(page.watched)}"
+                       th:text="'Dates Watched: ' + ${#strings.listJoin(page.watched, ', ')}">
+                </small>
+                <div class="position-absolute d-flex flex-column align-items-start top-0 m-2">
+                    <h1 th:if="${not #lists.isEmpty(page.rating)}" th:text="${#aggregates.avg(page.rating)}"></h1>
+                </div>
+                <div class="position-absolute d-flex flex-column align-items-start top-0 end-0 m-2">
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#watched">+</button>
+                        <div class="modal fade" id="watched" tabindex="-1" aria-labelledby="watchedLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <form th:action="@{watched/{id}(id=${page.id})}" method="post">
+                                    <input type="hidden" name="page" th:value="${page}">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="watchedLabel" th:text="${page.title}"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label for="date" class="mb-1 ms-1">Date Watched</label>
+                                            <input class="form-control form-control-sm" name="date" id="date" type="date">
+                                            <label for="rate" class="mb-1 ms-1">Rate</label>
+                                            <input class="form-control form-control-sm" name="rate" id="rate" type="number" min="1" max="10">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

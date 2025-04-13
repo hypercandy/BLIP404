@@ -23,16 +23,20 @@ public class Marvel {
     @ElementCollection
     private List<LocalDate> watched;
 
+    @ElementCollection
+    private List<Long> rating;
+
     @Column(nullable = false)
     private String poster;
 
     protected Marvel() {}
 
-    public Marvel(String title, LocalDate releaseDate, LocalDate timelineDate, List<LocalDate> watched, String poster) {
+    public Marvel(String title, LocalDate releaseDate, LocalDate timelineDate, List<LocalDate> watched, List<Long> rating, String poster) {
         this.title = title;
         this.releaseDate = releaseDate;
         this.timelineDate = timelineDate;
         this.watched = watched;
+        this.rating = rating;
         this.poster = poster;
     }
 
@@ -52,11 +56,19 @@ public class Marvel {
         return watched;
     }
 
+    public List<Long> getRating() {
+        return rating;
+    }
+
     public String getPoster() {
         return poster;
     }
 
     public void setWatched(List<LocalDate> watched) {
         this.watched = watched;
+    }
+
+    public void setRating(List<Long> rating) {
+        this.rating = rating;
     }
 }

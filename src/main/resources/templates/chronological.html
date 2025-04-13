@@ -8,30 +8,7 @@
 </head>
 <body>
 <div th:replace="~{fragments/navbar.html :: navbar}"></div>
-<div class="container">
-    <div class="row g-0">
-        <div class="card mt-3 d-flex flex-row position-relative" th:each="chronological : ${chronological}">
-            <img th:src="${chronological.poster}" alt="Image" width="350" height="500">
-            <div class="d-flex flex-column justify-content-center position-relative flex-grow-1 ms-3 pe-5">
-                <h4 class="ms-3 text-wrap" th:text="${chronological.title}">Title</h4>
-                <p class="text-muted small ms-3" th:text="${chronological.releaseDate}">Release Date</p>
-                <small class="text-muted d-block text-truncate ms-3" th:if="${not #lists.isEmpty(chronological.watched)}"
-                       th:text="'Dates Watched: ' + ${#strings.listJoin(chronological.watched, ', ')}">
-                </small>
-                <form th:action="@{watched/{id}(id=${chronological.id})}" method="post">
-                    <input type="hidden" name="page" value="chronological">
-                    <div class="position-absolute d-flex flex-column align-items-end top-0 end-0 m-2">
-                        <label for="watched" class="text-muted small mb-1 me-5">Add Watched Date</label>
-                        <div class="d-flex align-items-center gap-1">
-                            <input class="form-control form-control-sm" style="min-width: 10em;" name="watched" id="watched" type="date">
-                            <button class="btn btn-outline-primary btn-sm" type="submit">+</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<div th:replace="~{fragments/fragments.html :: marvel (page=${chronological})}"></div>
 <div th:replace="~{fragments/footer.html :: footer}"></div>
 </body>
 </html>
