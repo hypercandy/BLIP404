@@ -97,7 +97,10 @@ public class MarvelController {
             ratings.add(watchRate);
         } else {
             int index = watched.indexOf(watchedDate);
-            if (index != -1) {
+            if (watchRate == 0 && watched.contains(watchedDate)) {
+                watched.remove(index);
+                ratings.remove(index);
+            } else if (index != -1) {
                 ratings.set(index, watchRate);
             } else {
                 watched.add(watchedDate);
