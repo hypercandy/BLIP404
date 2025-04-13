@@ -88,17 +88,24 @@ public class MarvelController {
     @PostMapping("/watched/{id:[0-9]+}")
     public String postWatchedMovie(@PathVariable Long id, @RequestParam("date") LocalDate watchedDate, @RequestParam("rate") Long watchRate, @RequestParam("page") String page) {
         Marvel marvel = marvelService.getMarvelById(id);
-        if (marvel.getWatched() == null) {
-            List<LocalDate> dateWatched = new ArrayList<>();
-            List<Long> rating = new ArrayList<>();
-            dateWatched.add(watchedDate);
-            rating.add(watchRate);
-            marvel.setWatched(dateWatched);
-            marvel.setRating(rating);
+        List<LocalDate> watched = marvel.getWatched();
+        List<Long> ratings = marvel.getRating();
+        if (watched == null || ratings == null) {
+            watched = new ArrayList<>();
+            ratings = new ArrayList<>();
+            watched.add(watchedDate);
+            ratings.add(watchRate);
         } else {
-            marvel.getWatched().add(watchedDate);
-            marvel.getRating().add(watchRate);
+            int index = watched.indexOf(watchedDate);
+            if (index != -1) {
+                ratings.set(index, watchRate);
+            } else {
+                watched.add(watchedDate);
+                ratings.add(watchRate);
+            }
         }
+        marvel.setWatched(watched);
+        marvel.setRating(ratings);
         marvelRepository.save(marvel);
         return String.format("redirect:/%s?page=%s", page, page);
     }
