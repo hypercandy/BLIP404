@@ -3,6 +3,9 @@ package BLIP404.controller;
 import BLIP404.entity.Marvel;
 import BLIP404.repository.MarvelRepository;
 import BLIP404.service.MarvelService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +18,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This is the BLIP404.controller for the home page.
@@ -52,16 +56,30 @@ public class MarvelController {
     }
 
     @GetMapping("/chronological")
-    public String chronological(Model model) {
-        Iterable<Marvel> chronological = marvelService.getChronological();
-        model.addAttribute("chronological", chronological);
+    public String chronological(Model model,
+                                @RequestParam(name = "pageNumber", required = false) Integer pageNumber) {
+        int pageSize = 5; // 5 per page
+        Pageable page = PageRequest.of(Objects.requireNonNullElse(pageNumber, 0), pageSize);
+
+        Page<Marvel> chronological = marvelService.getChronological(page);
+        model.addAttribute("chronological", chronological.getContent());
+        model.addAttribute("totalPages", chronological.getTotalPages());
+        model.addAttribute("pageNumber", chronological.getNumber());
+        model.addAttribute("pageSize", pageSize);
         return "chronological";
     }
 
     @GetMapping("/release")
-    public String release(Model model) {
-        Iterable<Marvel> release = marvelService.getRelease();
-        model.addAttribute("release", release);
+    public String release(Model model,
+                          @RequestParam(name = "pageNumber", required = false) Integer pageNumber) {
+        int pageSize = 5; // 5 per page
+        Pageable page = PageRequest.of(Objects.requireNonNullElse(pageNumber, 0), pageSize);
+
+        Page<Marvel> release = marvelService.getRelease(page);
+        model.addAttribute("release", release.getContent());
+        model.addAttribute("totalPages", release.getTotalPages());
+        model.addAttribute("pageNumber", release.getNumber());
+        model.addAttribute("pageSize", pageSize);
         return "release";
     }
 

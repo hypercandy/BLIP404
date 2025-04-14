@@ -3,6 +3,8 @@ package BLIP404.service;
 import BLIP404.entity.Marvel;
 import BLIP404.repository.MarvelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,8 +20,12 @@ public class MarvelService {
         return marvelRepository.findAll();
     }
 
-    public Iterable<Marvel> getChronological() {
-        return marvelRepository.findChronologically();
+    public Page<Marvel> getChronological(Pageable page) {
+        final Page<Marvel> result = marvelRepository.findChronologically(page);
+        if (result == null || result.isEmpty()) {
+            return Page.empty(page);
+        }
+        return result;
     }
 
     public Iterable<Marvel> getAllUpcoming() {
@@ -30,8 +36,12 @@ public class MarvelService {
         return marvelRepository.findNextRelease();
     }
 
-    public Iterable<Marvel> getRelease() {
-        return marvelRepository.findReleaseOrder();
+    public Page<Marvel> getRelease(Pageable page) {
+        final Page<Marvel> result = marvelRepository.findReleaseOrder(page);
+        if (result == null || result.isEmpty()) {
+            return Page.empty(page);
+        }
+        return result;
     }
 
     public Marvel getMarvelById(Long id) {

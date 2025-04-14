@@ -8,7 +8,8 @@
 </head>
 <body>
 <div th:replace="~{fragments/navbar.html :: navbar}"></div>
-<div th:replace="~{fragments/fragments.html :: marvel (pages=${chronological})}"></div>
+<div th:replace="~{fragments/marvel.html :: marvel (pages=${chronological})}"></div>
+<div th:replace="~{fragments/pagination.html :: pagination(${'chronological?page=chronological'}, ${pageNumber}, ${totalPages}, ${pageSize})}"></div>
 <div th:replace="~{fragments/footer.html :: footer}"></div>
 </body>
 </html>

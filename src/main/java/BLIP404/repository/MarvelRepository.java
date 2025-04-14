@@ -1,6 +1,8 @@
 package BLIP404.repository;
 
 import BLIP404.entity.Marvel;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,8 +14,8 @@ public interface MarvelRepository extends CrudRepository<Marvel, Long> {
     Iterable<Marvel> findAllUpcoming();
 
     @Query("SELECT m from Marvel m WHERE (m.releaseDate < now()) ORDER BY m.timelineDate")
-    Iterable<Marvel> findChronologically();
+    Page<Marvel> findChronologically(Pageable page);
 
     @Query("SELECT m from Marvel m WHERE (m.releaseDate < now()) ORDER BY m.releaseDate")
-    Iterable<Marvel> findReleaseOrder();
+    Page<Marvel> findReleaseOrder(Pageable page);
 }
