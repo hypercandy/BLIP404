@@ -108,7 +108,7 @@ public class MarvelController {
                                    @RequestParam("date") LocalDate watchedDate,
                                    @RequestParam("rate") Long watchRate,
                                    @RequestParam("page") String page,
-                                   @RequestParam("pageNumber") Integer pageNumber) {
+                                   @RequestParam(value = "pageNumber", required = false) Integer pageNumber) {
         Marvel marvel = marvelService.getMarvelById(id);
         List<LocalDate> watched = marvel.getWatched();
         List<Long> ratings = marvel.getRating();
@@ -132,6 +132,10 @@ public class MarvelController {
         marvel.setWatched(watched);
         marvel.setRating(ratings);
         marvelRepository.save(marvel);
-        return String.format("redirect:/%s?page=%s&pageNumber=%d", page, page, pageNumber);
+        if (pageNumber != null) {
+            return String.format("redirect:/%s?page=%s&pageNumber=%d", page, page, pageNumber);
+        } else {
+            return String.format("redirect:/%s?page=%s", page, page);
+        }
     }
 }

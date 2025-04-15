@@ -13,7 +13,7 @@ public interface MarvelRepository extends CrudRepository<Marvel, Long> {
     @Query("SELECT m from Marvel m WHERE (m.releaseDate > now()) ORDER BY m.releaseDate")
     Iterable<Marvel> findAllUpcoming();
 
-    @Query("SELECT m from Marvel m WHERE (m.releaseDate < now()) ORDER BY m.timelineDate")
+    @Query("SELECT m from Marvel m WHERE (m.releaseDate < now() AND m.timelineDate IS NOT NULL) ORDER BY m.timelineDate")
     Page<Marvel> findChronologically(Pageable page);
 
     @Query("SELECT m from Marvel m WHERE (m.releaseDate < now()) ORDER BY m.releaseDate")
