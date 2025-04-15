@@ -91,7 +91,7 @@ public class MarvelController {
     @PostMapping("/new")
     public String postNewMovie(@RequestParam String title,
                                @RequestParam LocalDate releaseDate,
-                               @RequestParam LocalDate timelineDate,
+                               @RequestParam(required = false) LocalDate timelineDate,
                                @RequestParam String poster,
                                Model model) {
         model.addAttribute("title", title);
@@ -104,7 +104,11 @@ public class MarvelController {
     }
 
     @PostMapping("/watched/{id:[0-9]+}")
-    public String postWatchedMovie(@PathVariable Long id, @RequestParam("date") LocalDate watchedDate, @RequestParam("rate") Long watchRate, @RequestParam("page") String page) {
+    public String postWatchedMovie(@PathVariable Long id,
+                                   @RequestParam("date") LocalDate watchedDate,
+                                   @RequestParam("rate") Long watchRate,
+                                   @RequestParam("page") String page,
+                                   @RequestParam("pageNumber") Integer pageNumber) {
         Marvel marvel = marvelService.getMarvelById(id);
         List<LocalDate> watched = marvel.getWatched();
         List<Long> ratings = marvel.getRating();
@@ -128,6 +132,6 @@ public class MarvelController {
         marvel.setWatched(watched);
         marvel.setRating(ratings);
         marvelRepository.save(marvel);
-        return String.format("redirect:/%s?page=%s", page, page);
+        return String.format("redirect:/%s?page=%s&pageNumber=%d", page, page, pageNumber);
     }
 }

@@ -19,6 +19,7 @@
                             <div class="modal-dialog">
                                 <form th:action="@{watched/{id}(id=${page.id})}" method="post">
                                     <input type="hidden" name="page" th:value="${param.page}">
+                                    <input type="hidden" name="pageNumber" th:value="${param.pageNumber}">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" th:id="'watchedLabel__' + ${page.id}" th:text="${page.title}"></h5>

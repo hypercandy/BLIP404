@@ -11,5 +11,15 @@
 <div th:replace="~{fragments/marvel.html :: marvel (pages=${chronological})}"></div>
 <div th:replace="~{fragments/pagination.html :: pagination(${'chronological?page=chronological'}, ${pageNumber}, ${totalPages}, ${pageSize})}"></div>
 <div th:replace="~{fragments/footer.html :: footer}"></div>
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function (event) {-->
+<!--        var scrollpos = localStorage.getItem("scrollpos");-->
+<!--        if (scrollpos) window.scrollTo(0, scrollpos);-->
+<!--    });-->
+
+<!--    window.onscroll = function (e) {-->
+<!--        localStorage.setItem("scrollpos", window.scrollY);-->
+<!--    };-->
+<!--</script>-->
 </body>
 </html>
