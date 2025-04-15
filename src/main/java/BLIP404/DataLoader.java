@@ -50,7 +50,7 @@ public class DataLoader implements CommandLineRunner {
             marvel.add(new Marvel("Avengers: Infinity War", LocalDate.of(2018, 4, 28), LocalDate.of(2018, 9, 1), null, null, "https://cdn.marvel.com/content/1x/avengersinfinitywar_lob_crd_02.jpg"));
             marvel.add(new Marvel("Avengers: Endgame", LocalDate.of(2019, 4, 26), LocalDate.of(2023, 8, 1), null, null, "https://cdn.marvel.com/content/1x/avengersendgame_lob_crd_05.jpg"));
             marvel.add(new Marvel("Shang-Chi and the Legend of the Ten Rings", LocalDate.of(2021, 9, 3), LocalDate.of(2024, 5, 1), null, null, "https://cdn.marvel.com/content/1x/shangchi_lob_crd_07.jpg"));
-            marvel.add(new Marvel("Spider-Man: Far From Home", LocalDate.of(2019, 7, 2), LocalDate.of(2024, 6, 1), null, null, "https://cdn.marvel.com/content/1x/spider-manfarfromhome_lob_crd_04_0.jpg"));
+            marvel.add(new Marvel("Spider-Man: Far From Home", LocalDate.of(2019, 7, 2), LocalDate.of(2024, 7, 1), null, null, "https://cdn.marvel.com/content/1x/spider-manfarfromhome_lob_crd_04_0.jpg"));
             marvel.add(new Marvel("Spider-Man: No Way Home", LocalDate.of(2021, 12, 17), LocalDate.of(2024, 8, 1), null, null, "https://cdn.marvel.com/content/1x/spider-mannowayhome_lob_crd_03.jpg"));
             marvel.add(new Marvel("Eternals", LocalDate.of(2021, 11, 5), LocalDate.of(2024, 9, 1), null, null, "https://cdn.marvel.com/content/1x/eternals_lob_crd_06.jpg"));
             marvel.add(new Marvel("Doctor Strange in the Multiverse of Madness", LocalDate.of(2022, 5, 6), LocalDate.of(2024, 10, 1), null, null, "https://cdn.marvel.com/content/1x/doctorstrangeinthemultiverseofmadness_lob_crd_02_3.jpg"));
