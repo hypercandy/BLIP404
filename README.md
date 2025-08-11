@@ -2,18 +2,9 @@
 basic project using ```gradle```, ```Spring Boot```, ```Thymeleaf```, and ```GitLab CI```.
 
 ## How to run
-### 1 - Running the project
-From the root directory ...
+From the root directory run `./gradlew bootRun` (or gradlew bootRun on Windows).
 
-On Linux/Mac OS:
-```shell
-./gradlew bootRun
-```
-
-On Windows:
-```shell
-gradlew bootRun
-```
+The application should run on http://localhost:8080
 
 ## References
 
